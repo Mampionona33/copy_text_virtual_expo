@@ -1,5 +1,5 @@
 {
-  "name": "copy text virtual expo",
+  "name": "copy text virtual expo module 1",
   "version": "0.0.0.1",
   "manifest_version": 3,
   "description": "Copy all text from tab",
@@ -39,6 +39,7 @@
       },
       "description": "copy selected text to FR variable"
     },
+
     "inject_text": {
       "suggested_key": {
         "default": "Alt+Shift+1"

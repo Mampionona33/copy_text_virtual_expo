@@ -39,6 +39,7 @@ chrome.commands.onCommand.addListener((command) => {
         files: ['./script/getFrText.js'],
       });
     }
+
     if (command === 'inject_text') {
       chrome.scripting.executeScript({
         target: { tabId: tabId },

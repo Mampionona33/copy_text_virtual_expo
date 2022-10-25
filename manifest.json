@@ -25,11 +25,23 @@
       "suggested_key": {
         "default": "Alt+1"
       },
-      "description": "copy selected text to en variable"
+      "description": "copy selected text to EN variable"
+    },
+    "Copy_selected_text_to_DE": {
+      "suggested_key": {
+        "default": "Alt+2"
+      },
+      "description": "copy selected text to DE variable"
+    },
+    "Copy_selected_text_to_FR": {
+      "suggested_key": {
+        "default": "Alt+3"
+      },
+      "description": "copy selected text to FR variable"
     },
     "inject_text": {
       "suggested_key": {
-        "default": "Alt+2"
+        "default": "Alt+Shift+1"
       },
       "description": "copy selected text to en variable"
     }

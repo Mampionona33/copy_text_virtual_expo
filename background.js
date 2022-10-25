@@ -1,26 +1,7 @@
-chrome.runtime.onInstalled.addListener((reason) => {
-  if (reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    checkCommandShortcuts();
-  }
-});
-
-function checkCommandShortcuts() {
-  chrome.commands.getAll((commands) => {
-    let missingShortcuts = [];
-
-    for (let { name, shortcut } of commands) {
-      if (shortcut === '') {
-        missingShortcuts.push(name);
-      }
-    }
-
-    if (missingShortcuts.length > 0) {
-      // Update the extension UI to inform the user that one or more
-      // commands are currently unassigned.
-      console.log('command unassigned');
-    }
-  });
-}
+/* 
+  USE THIS TO SETUP CUSTUM SHURTCUT
+  chrome://extensions/shortcuts
+*/
 
 async function getCurrentTab() {
   let queryOptions = { active: true, lastFocusedWindow: true };
@@ -46,8 +27,19 @@ chrome.commands.onCommand.addListener((command) => {
         files: ['./script/getEnText.js'],
       });
     }
+    if (command === 'Copy_selected_text_to_DE') {
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: ['./script/getDeText.js'],
+      });
+    }
+    if (command === 'Copy_selected_text_to_FR') {
+      chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: ['./script/getFrText.js'],
+      });
+    }
     if (command === 'inject_text') {
-      console.log(currentTab.url);
       chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: ['./script/injectText.js'],

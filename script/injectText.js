@@ -9,15 +9,13 @@
   const idpEn = document.getElementById(idEn);
 
   chrome.storage.sync.get(['En_text'], (result) => {
-    if (result) {
-      const enTxt = result.En_text;
-      idpEn.value = enTxt;
-      idpEn.focus();
-      idpEn.dispatchEvent(event);
+    const enTxt = result.En_text;
+    idpEn.value = enTxt.length > 0 ? enTxt : '';
+    idpEn.focus();
+    idpEn.dispatchEvent(event);
 
-      chrome.storage.sync.remove('En_text', () => {
-        console.log('En_text was clear successully from storage');
-      });
-    }
+    chrome.storage.sync.remove('En_text', () => {
+      console.log('En_text was clear successully from storage');
+    });
   });
 })();

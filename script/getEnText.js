@@ -10,14 +10,10 @@
 
   let outPutText = ' ';
 
-  let prevRecordedText = '';
-
   if (anchorNode.tagName.match(/li/gi)) {
     console.log(anchorNode.tagName);
     formatList = DOT + ' ' + selectedTextToString;
     formatList = formatList.replace(/\n/g, '\n' + DOT + ' ');
-    // console.log(formatList);
-    // outPutText = outPutText.concat(formatList, '\n');
   } else {
     if (selectedTextToString.length > 0) {
       outPutText = outPutText.concat(selectedTextToString, '\n');

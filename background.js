@@ -35,7 +35,7 @@ const getCurrentUrl = async () => {
   let [tab] = await chrome.tabs.query(queryOptions);
   return tab;
 };
-
+// http://www.directindustry.com/r/FicheSociete.php?s=7337&w=24467ERTiNo4Hs6tZmC5l2D56Z41Y1Z2l2V7pzgri52S4p3T3&droit=on
 chrome.commands.onCommand.addListener((command) => {
   getCurrentTab().then((currentTab) => {
     const tabId = currentTab.id;

@@ -1,7 +1,39 @@
 {
   "name": "copy text virtual expo",
   "version": "0.0.0.1",
-  "manifest_version": "3",
-  "description": "Copy all text from tab"
-  // comment :  "http://www.directindustry.com/r/FicheSociete.php?s=7337&w=24467ERTiNo4Hs6tZmC5l2D56Z41Y1Z2l2V7pzgri52S4p3T3&droit=on"
+  "manifest_version": 3,
+  "description": "Copy all text from tab",
+  "permissions": [
+    "storage",
+    "clipboardRead",
+    "tabs",
+    "pageCapture",
+    "activeTab",
+    "scripting"
+  ],
+  "icons": {
+    "16": "img/icon16x16.png",
+    "32": "img/icon32x32.png",
+    "128": "img/icon128x128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "options_page": "./optionPage/option.html",
+
+  "commands": {
+    "Copy_selected_text_to_En": {
+      "suggested_key": {
+        "default": "Alt+1"
+      },
+      "description": "copy selected text to en variable"
+    },
+    "inject_text": {
+      "suggested_key": {
+        "default": "Alt+2"
+      },
+      "description": "copy selected text to en variable"
+    }
+  }
 }

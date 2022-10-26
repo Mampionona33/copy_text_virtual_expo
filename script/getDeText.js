@@ -8,7 +8,8 @@
 
   let formatList = '';
 
-  let outPutText = ' ';
+  let outPutText = '';
+  let nbTotalText = 0;
 
   if (anchorNode.tagName.match(/li/gi)) {
     console.log(anchorNode.tagName);
@@ -30,15 +31,18 @@
         } else {
           outPutText = prevText.concat('\n', selectedTextToString);
         }
-        chrome.storage.sync.set({ De_text: outPutText }, () =>
-          console.log(outPutText)
-        );
-      } else {
-        alert('Nombre de caractère pour idp text De  atteint');
+        nbTotalText = prevText.length + outPutText.length;
+        if (nbTotalText < 1700) {
+          chrome.storage.sync.set({ De_text: outPutText }, () =>
+            console.log(outPutText)
+          );
+        } else {
+          alert(`Nombre de caractère pour idp text DE  atteint ${nbTotalText}`);
+        }
       }
     } else {
       if (formatList.length > 0) {
-        chrome.storage.sync.set({ En_text: formatList }, () =>
+        chrome.storage.sync.set({ De_text: formatList }, () =>
           console.log(outPutText)
         );
       }

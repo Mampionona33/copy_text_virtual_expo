@@ -31,7 +31,7 @@
       nbTotalText = outPutText.length + prevText.length;
 
       if (nbTotalText < 1700) {
-        outPutText = prevText.concat('\n', outPutText);
+        outPutText = prevText.concat(outPutText);
         chrome.storage.sync.set({ De_text: outPutText }, () =>
           console.log(outPutText)
         );

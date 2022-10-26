@@ -24,15 +24,19 @@
     if (Object.keys(result).length > 0) {
       let prevText = '';
       prevText = result.Fr_text;
-      console.log(prevText);
-      if (formatList.length > 0) {
-        outPutText = prevText.concat('\n', formatList);
+
+      if (prevText.length < 1700) {
+        if (formatList.length > 0) {
+          outPutText = prevText.concat('\n', formatList);
+        } else {
+          outPutText = prevText.concat('\n', selectedTextToString);
+        }
+        chrome.storage.sync.set({ Fr_text: outPutText }, () =>
+          console.log(outPutText)
+        );
       } else {
-        outPutText = prevText.concat('\n', selectedTextToString);
+        alert('Nombre de caractère pour idp text De  atteint');
       }
-      chrome.storage.sync.set({ Fr_text: outPutText }, () =>
-        console.log(outPutText)
-      );
     } else {
       if (formatList.length > 0) {
         chrome.storage.sync.set({ En_text: formatList }, () =>

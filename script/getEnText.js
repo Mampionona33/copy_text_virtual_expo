@@ -34,6 +34,11 @@
         console.log(outPutText)
       );
     } else {
+      if (formatList.length > 0) {
+        chrome.storage.sync.set({ En_text: formatList }, () =>
+          console.log(outPutText)
+        );
+      }
       chrome.storage.sync.set({ En_text: outPutText }, () =>
         console.log(outPutText)
       );

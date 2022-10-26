@@ -35,7 +35,7 @@
           console.log(outPutText)
         );
       } else {
-        alert('Nombre de caractère pour idp text De  atteint');
+        alert('Nombre de caractère pour idp text Fr  atteint');
       }
     } else {
       if (formatList.length > 0) {

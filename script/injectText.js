@@ -122,8 +122,9 @@
           'http://img.directindustry.com/images_di/2ai/save-En.gif'
       );
 
+      // submit form
       if (saveBtn.length > 0) {
-        saveBtn.map((item) => item.click());
+        // saveBtn.map((item) => item.click());
       }
     }
   );

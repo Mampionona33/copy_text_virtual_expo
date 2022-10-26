@@ -44,7 +44,7 @@
       "suggested_key": {
         "default": "Alt+Shift+1"
       },
-      "description": "copy selected text to en variable"
+      "description": "Inject text in idp text pop up"
     }
   }
 }

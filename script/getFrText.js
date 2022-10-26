@@ -9,13 +9,13 @@
   let formatList = '';
 
   let outPutText = ' ';
-
+  let prevText = '';
   let nbTotalText = 0;
 
   if (anchorNode.tagName.match(/li/gi)) {
     console.log(anchorNode.tagName);
     formatList = DOT + ' ' + selectedTextToString;
-    formatList = formatList.replace(/\n/g, '\n' + DOT + ' ');
+    outPutText = formatList.replace(/\n/g, '\n' + DOT + ' ');
   } else {
     if (selectedTextToString.length > 0) {
       outPutText = outPutText.concat(selectedTextToString, '\n');
@@ -23,31 +23,23 @@
   }
 
   chrome.storage.sync.get(['Fr_text'], (result) => {
+    // If there is a stored data
     if (Object.keys(result).length > 0) {
-      let prevText = '';
       prevText = result.Fr_text;
 
-      if (prevText.length < 1700) {
-        if (formatList.length > 0) {
-          outPutText = prevText.concat('\n', formatList);
-        } else {
-          outPutText = prevText.concat('\n', selectedTextToString);
-        }
-        nbTotalText = prevText.length + outPutText.length;
-        if (nbTotalText < 1700) {
-          chrome.storage.sync.set({ Fr_text: outPutText }, () =>
-            console.log(outPutText)
-          );
-        } else {
-          alert(`Nombre de caractère pour idp text FR  atteint ${nbTotalText}`);
-        }
+      // clacul sum of sotred data + selected data
+      nbTotalText = outPutText.length + prevText.length;
+
+      if (nbTotalText < 1700) {
+        outPutText = prevText.concat('\n', outPutText);
+        chrome.storage.sync.set({ Fr_text: outPutText }, () =>
+          console.log(outPutText)
+        );
+      } else {
+        alert(`Nombre de caractère pour idp text FR  atteint ${nbTotalText}`);
       }
     } else {
-      if (formatList.length > 0) {
-        chrome.storage.sync.set({ Fr_text: formatList }, () =>
-          console.log(formatList)
-        );
-      }
+      // if there is data stored
       chrome.storage.sync.set({ Fr_text: outPutText }, () =>
         console.log(outPutText)
       );

@@ -43,7 +43,7 @@
     } else {
       if (formatList.length > 0) {
         chrome.storage.sync.set({ De_text: formatList }, () =>
-          console.log(outPutText)
+          console.log(formatList)
         );
       }
       chrome.storage.sync.set({ De_text: outPutText }, () =>

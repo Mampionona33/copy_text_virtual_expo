@@ -1,0 +1,23 @@
+{
+  "name": "copy_text_virtual_expo_module_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mampionona33/copy_text_virtual_expo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mampionona33/copy_text_virtual_expo/issues"
+  },
+  "homepage": "https://github.com/Mampionona33/copy_text_virtual_expo#readme",
+  "dependencies": {
+    "bifrost-cors": "^1.0.4"
+  }
+}

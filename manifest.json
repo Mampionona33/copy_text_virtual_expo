@@ -20,6 +20,8 @@
     "service_worker": "background.js"
   },
 
+  "options_page": "./option/option.html",
+
   "commands": {
     "Copy_selected_text_to_En": {
       "suggested_key": {

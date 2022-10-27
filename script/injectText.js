@@ -35,6 +35,8 @@
   const idTextAreaRu = `ElementProduct[Modification][Ru][${pid}][IDPTexteRu]`;
   const textAreaRu = document.getElementById(idTextAreaRu);
 
+  console.log('inject text');
+
   // inject idp text En
   chrome.storage.sync.get(
     [
@@ -47,6 +49,7 @@
       'Jp_text',
       'Pt_text',
       'Ru_text',
+      'DomaineName',
     ],
     (result) => {
       const enTxt = result.En_text;

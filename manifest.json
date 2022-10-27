@@ -20,6 +20,8 @@
     "service_worker": "background.js"
   },
 
+  "host_permissions": ["http://www.directindustry.com/*"],
+
   "options_page": "./option/option.html",
 
   "commands": {
